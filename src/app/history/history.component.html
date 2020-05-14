@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>s/n</th>
+                        <th>Date</th>
+                        <th>Fields</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody style="width: 100%;">
+                    <tr *ngFor="let item of history; let i = index">
+                        <td>{{i + 1}}</td>
+                        <td>{{getDate(item?.date)}}</td>
+                        <td>{{item?.fields.x1}}, {{item?.fields.v1}}, {{item?.fields.x2}}, {{item?.fields.v2}}</td>
+                        <td>{{item?.result}}</td>
+                    </tr>
+                    <tr *ngIf="history?.length === 0">
+                        <td colspan="4" class="text-center">No history found</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
